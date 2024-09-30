@@ -1,0 +1,29 @@
+---
+const PROJECTS = [
+  {
+    title: "Proyecto 1",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.z",
+    link: "#",
+    github: "#",
+    image: "https://via.placeholder.com/300x200",
+    tags: ["LARAVEL", "HTML", "Tailwind"],
+  },
+];
+---
+{
+    PROJECTS.map(({title, description, tags, image}) => (
+        <article>
+            <h3 class="text-xl font-semibold text-sky-300 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul>
+                {
+                    tags.map(tag => (
+                    <li>{tag}</li>
+                ))
+                }
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={title}>
+        </article>
+    ))
+}
